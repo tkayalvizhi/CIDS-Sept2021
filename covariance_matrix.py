@@ -29,7 +29,7 @@ def create_scatter_plot(x_a, y_a,  subplot, title):
     subplot.spines['bottom'].set_position('zero')
     subplot.spines['right'].set_color('None')
     subplot.spines['top'].set_color('None')
-    cov, cor = get_cov_cor(x_axis, y_a)
+    cov, cor = get_cov_cor(x_a, y_a)
     subplot.title.set_text(f"{title} \ncov = {cov} cor = {cor}")
     subplot.plot(x_a, y_a, 'o', alpha=0.75, markersize=2)
     subplot.plot(x_mean, y_mean, 'ro')
@@ -49,8 +49,8 @@ y_axis = x_axis + np.random.normal(0, 5, 100)
 create_scatter_plot(x_axis, y_axis, ax[0, 1], "Medium positive correlation")
 
 # Third Plot: Low positive correlation
-y_axis = x_axis + np.random.normal(0, 25, 100)
-create_scatter_plot(x_axis, y_axis, ax[0, 2], "Low positive correlation")
+y_axis = 2 * x_axis + np.random.normal(0, 10, 100)
+create_scatter_plot(x_axis, y_axis, ax[0, 2], "Double y-axis scale")
 
 # fourth plot: Negative correlation
 y_axis = (-1 * x_axis) + np.random.normal(0, 1, 100)
