@@ -21,17 +21,16 @@ def get_cov_cor(x_array, y_array):
     return (covariance, correlation)
 
 
-def create_scatter_plot(x_a, y_a,  subplot):
+def create_scatter_plot(x_a, y_a,  subplot, title):
     x_mean = statistics.mean(x_a)
     y_mean = statistics.mean(y_a)
 
-    axes = subplot
-    axes.spines['left'].set_position('zero')
-    axes.spines['bottom'].set_position('zero')
-    axes.spines['right'].set_color('None')
-    axes.spines['top'].set_color('None')
+    subplot.spines['left'].set_position('zero')
+    subplot.spines['bottom'].set_position('zero')
+    subplot.spines['right'].set_color('None')
+    subplot.spines['top'].set_color('None')
     cov, cor = get_cov_cor(x_axis, y_a)
-    subplot.title.set_text(f"cov = {cov} cor = {cor}")
+    subplot.title.set_text(f"{title} \ncov = {cov} cor = {cor}")
     subplot.plot(x_a, y_a, 'o', alpha=0.75, markersize=2)
     subplot.plot(x_mean, y_mean, 'ro')
     subplot.grid(color='gray', alpha=0.25)
@@ -42,26 +41,27 @@ x_axis = np.linspace(-10, 10, 100)
 
 # First Plot: High positive correlation
 y_axis = x_axis + np.random.normal(0, 1, 100)
-create_scatter_plot(x_axis, y_axis, ax[0, 0])
+
+create_scatter_plot(x_axis, y_axis, ax[0, 0], "High positive correlation")
 
 # Second Plot: Medium positive correlation
 y_axis = x_axis + np.random.normal(0, 5, 100)
-create_scatter_plot(x_axis, y_axis, ax[0, 1])
+create_scatter_plot(x_axis, y_axis, ax[0, 1], "Medium positive correlation")
 
 # Third Plot: Low positive correlation
 y_axis = x_axis + np.random.normal(0, 25, 100)
-create_scatter_plot(x_axis, y_axis, ax[0, 2])
+create_scatter_plot(x_axis, y_axis, ax[0, 2], "Low positive correlation")
 
 # fourth plot: Negative correlation
 y_axis = (-1 * x_axis) + np.random.normal(0, 1, 100)
-create_scatter_plot(x_axis, y_axis, ax[1, 0])
+create_scatter_plot(x_axis, y_axis, ax[1, 0], "Negative correlation")
 
 # fifth plot: 0 correlation symmetric function
 y_axis = (100 - x_axis ** 2) ** 1 / 2
-create_scatter_plot(x_axis, y_axis, ax[1, 1])
+create_scatter_plot(x_axis, y_axis, ax[1, 1], "0 correlation (Symmetric)")
 
 # sixth plot: completely random
 y_axis = np.random.normal(0, 1, 100)
-create_scatter_plot(x_axis, y_axis, ax[1, 2])
+create_scatter_plot(x_axis, y_axis, ax[1, 2], "0 correlation (Random)")
 
 plt.show()
