@@ -1,0 +1,57 @@
+computing units
+Memory units 
+Registers: 
+cache: differnet degrees of dostance from the processor
+memory: dynamic
+
+harddisk: solid state drives. permanent
+actuators: 
+
+Python is called a high level language:
+dynamic language
+must have sufficient expressinve power.
+turing complete: 
+
+1) make a statement. Store in a box: Variable
+read statements right to left.
+each statement in a line
+
+2) conditional: should continue to do the hammering?  
+empty spaces have meaning.Indentation is syntax
+
+if condition:
+	do something
+else:
+	do something else
+
+3) iterting: keep hammering. keep repeating
+
+
+while condition:
+	do something 
+	check condition
+
+
+Data structures: a collection. a bag of things.
+
+	list:
+		ordered collection, each item has an index or 				number or postion in the list.
+		can contain duplticates.
+		
+		
+		iteration:
+		for item in list:
+			print(item) item is an indicator valirable.
+
+	set:
+		a collection that has no duplicates.
+		No idexing either.
+
+	dict:
+		
+send out zoom links
+Send out python reference links
+send out recording. Youtube link
+
+	
+
